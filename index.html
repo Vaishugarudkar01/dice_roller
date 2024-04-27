@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>DICE ROLLER</title>
+    <style>
+        body{
+            display: block;
+            text-align: center;
+            background-image: linear-gradient(120deg, #95e1a3 0%, #7addb1 100%);
+        }
+        .dice-roller{
+            height: 350px;
+            
+        }
+        .heading{
+            margin: 50px auto;
+            font-size: 40px;
+            text-decoration:underline;
+        }
+        .dice-btn{
+          
+            background-image: linear-gradient(-20deg, #fc60ef 0%, #5c2e05 100%);
+            color: white;
+            cursor: pointer;
+            display: block;
+           margin: 20px auto;
+            padding: 8px 30px;
+            border-radius: 20px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Roll the Dice</h1>
+    <img src="dice.png" alt="dice" class="dice-roller" id="dice-img">
+    <button class="dice-btn" onclick="roll()">Roll Dice</button>
+ <script>
+    function roll()
+    {
+        const min=1;
+        const max=6;
+        const randomNumber=Math.round(Math.random()*(max-min)+min);
+
+       const imgElement=document.getElementById('dice-img');
+
+       switch(randomNumber){
+        case 1:
+           imgElement.src="dice (1).png";
+           break; 
+           case 2:
+           imgElement.src="dice (2).png";
+           break; 
+           case 3:
+           imgElement.src="dice (3).png";
+           break; 
+           case 4:
+           imgElement.src="dice (4).png";
+           break; 
+           case 5:
+           imgElement.src="dice (5).png";
+           break; 
+           case 6:
+           imgElement.src="dice (6).png";
+           break; 
+           default:
+            imgElement.src='default.png';
+       }
+    }
+</script>
+</body>
+</html>
